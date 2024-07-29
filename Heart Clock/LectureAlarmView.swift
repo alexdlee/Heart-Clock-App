@@ -165,7 +165,7 @@ struct LectureAlarmView: View {
                     .foregroundColor(.white)
                     
                     .alert("You have not selected an alarm sound. We recommend turning on vibration mode for quiet spaces like a lecture.", isPresented: $noAlarmType) {
-                        Button("Vibration") {
+                        Button("Vibrate") {
                             vibrationStatus = true
                             startLecture()
                             noAlarmType = false
