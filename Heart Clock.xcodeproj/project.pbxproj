@@ -7,22 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		434265DB2C1E98A80036A9E9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434265DA2C1E98A80036A9E9 /* HomeView.swift */; };
+		437E29E12C26A6C700C14D6A /* SleepAlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437E29E02C26A6C700C14D6A /* SleepAlarmView.swift */; };
+		437E29E32C26A73A00C14D6A /* StudyAlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437E29E22C26A73A00C14D6A /* StudyAlarmView.swift */; };
+		437E29E52C26A76F00C14D6A /* LectureAlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437E29E42C26A76F00C14D6A /* LectureAlarmView.swift */; };
+		437E29E72C26A78B00C14D6A /* DrivingAlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437E29E62C26A78B00C14D6A /* DrivingAlarmView.swift */; };
 		43EDAF0B2C1BA3C200DD02BA /* Heart_ClockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EDAF0A2C1BA3C200DD02BA /* Heart_ClockApp.swift */; };
 		43EDAF0D2C1BA3C200DD02BA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EDAF0C2C1BA3C200DD02BA /* ContentView.swift */; };
 		43EDAF0F2C1BA3C400DD02BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43EDAF0E2C1BA3C400DD02BA /* Assets.xcassets */; };
 		43EDAF122C1BA3C400DD02BA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43EDAF112C1BA3C400DD02BA /* Preview Assets.xcassets */; };
-		43EDAF192C1BAE9F00DD02BA /* HealthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EDAF182C1BAE9F00DD02BA /* HealthManager.swift */; };
 		43EDAF1B2C1C002200DD02BA /* AlarmData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EDAF1A2C1C002200DD02BA /* AlarmData.swift */; };
+		43FA2E772C2CD2C5005C5A1F /* HealthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA2E762C2CD2C5005C5A1F /* HealthManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		434265DA2C1E98A80036A9E9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		437E29E02C26A6C700C14D6A /* SleepAlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepAlarmView.swift; sourceTree = "<group>"; };
+		437E29E22C26A73A00C14D6A /* StudyAlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyAlarmView.swift; sourceTree = "<group>"; };
+		437E29E42C26A76F00C14D6A /* LectureAlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureAlarmView.swift; sourceTree = "<group>"; };
+		437E29E62C26A78B00C14D6A /* DrivingAlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrivingAlarmView.swift; sourceTree = "<group>"; };
 		43EDAF072C1BA3C200DD02BA /* Heart Clock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Heart Clock.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		43EDAF0A2C1BA3C200DD02BA /* Heart_ClockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heart_ClockApp.swift; sourceTree = "<group>"; };
 		43EDAF0C2C1BA3C200DD02BA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		43EDAF0E2C1BA3C400DD02BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43EDAF112C1BA3C400DD02BA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		43EDAF182C1BAE9F00DD02BA /* HealthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthManager.swift; sourceTree = "<group>"; };
 		43EDAF1A2C1C002200DD02BA /* AlarmData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmData.swift; sourceTree = "<group>"; };
+		43FA2E762C2CD2C5005C5A1F /* HealthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthManager.swift; sourceTree = "<group>"; };
+		43FA2E782C2CD8A5005C5A1F /* Heart Clock.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Heart Clock.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,12 +66,18 @@
 		43EDAF092C1BA3C200DD02BA /* Heart Clock */ = {
 			isa = PBXGroup;
 			children = (
+				43FA2E782C2CD8A5005C5A1F /* Heart Clock.entitlements */,
 				43EDAF0A2C1BA3C200DD02BA /* Heart_ClockApp.swift */,
 				43EDAF0C2C1BA3C200DD02BA /* ContentView.swift */,
-				43EDAF182C1BAE9F00DD02BA /* HealthManager.swift */,
+				434265DA2C1E98A80036A9E9 /* HomeView.swift */,
+				437E29E02C26A6C700C14D6A /* SleepAlarmView.swift */,
+				437E29E22C26A73A00C14D6A /* StudyAlarmView.swift */,
+				437E29E42C26A76F00C14D6A /* LectureAlarmView.swift */,
+				437E29E62C26A78B00C14D6A /* DrivingAlarmView.swift */,
 				43EDAF0E2C1BA3C400DD02BA /* Assets.xcassets */,
 				43EDAF102C1BA3C400DD02BA /* Preview Content */,
 				43EDAF1A2C1C002200DD02BA /* AlarmData.swift */,
+				43FA2E762C2CD2C5005C5A1F /* HealthManager.swift */,
 			);
 			path = "Heart Clock";
 			sourceTree = "<group>";
@@ -143,9 +160,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				437E29E12C26A6C700C14D6A /* SleepAlarmView.swift in Sources */,
+				43FA2E772C2CD2C5005C5A1F /* HealthManager.swift in Sources */,
 				43EDAF0D2C1BA3C200DD02BA /* ContentView.swift in Sources */,
+				437E29E72C26A78B00C14D6A /* DrivingAlarmView.swift in Sources */,
 				43EDAF1B2C1C002200DD02BA /* AlarmData.swift in Sources */,
-				43EDAF192C1BAE9F00DD02BA /* HealthManager.swift in Sources */,
+				434265DB2C1E98A80036A9E9 /* HomeView.swift in Sources */,
+				437E29E52C26A76F00C14D6A /* LectureAlarmView.swift in Sources */,
+				437E29E32C26A73A00C14D6A /* StudyAlarmView.swift in Sources */,
 				43EDAF0B2C1BA3C200DD02BA /* Heart_ClockApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,11 +299,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Heart Clock/Heart Clock.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Heart Clock/Preview Content\"";
+				DEVELOPMENT_TEAM = A9G68DGVH3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "We request access to enable heart rate monitoring features only in our application";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -305,11 +330,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Heart Clock/Heart Clock.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Heart Clock/Preview Content\"";
+				DEVELOPMENT_TEAM = A9G68DGVH3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "We request access to enable heart rate monitoring features only in our application";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

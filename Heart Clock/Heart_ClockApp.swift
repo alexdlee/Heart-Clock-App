@@ -13,6 +13,7 @@ struct Heart_ClockApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(manager)
         }
     }
 }
