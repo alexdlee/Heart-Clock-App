@@ -195,7 +195,7 @@ struct LectureAlarmView: View {
                
             }
         } .onAppear {
-            manager.startHeartRateQuery()
+            manager.scheduleNextQuery()
         }
     }
     

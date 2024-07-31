@@ -183,7 +183,7 @@ struct SleepAlarmView: View {
             .shadow(color: .gray.opacity(0.3), radius: 5, x: 0, y: 5)
             .listStyle(.plain)
             .onAppear {
-                manager.startHeartRateQuery()
+                manager.scheduleNextQuery()
             }
             
         }

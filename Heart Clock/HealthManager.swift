@@ -11,7 +11,9 @@ import UIKit
 
 class HealthManager: ObservableObject {
     
-    @Published var heartRate: Double = 0.0
+    @Published var heartRate: Int = 0
+    let updateInterval: TimeInterval = 240
+    let checkInterval: TimeInterval = 600
     private var timer: Timer?
     private var healthStore = HKHealthStore()
     private var heartRateAnchor: HKQueryAnchor?
@@ -19,49 +21,54 @@ class HealthManager: ObservableObject {
     
     init() {
         let heartRate = HKQuantityType(.heartRate)
-        NotificationCenter.default.addObserver(self, selector: #selector(startHeartRateQuery), name: UIApplication.didBecomeActiveNotification, object: nil)
-        
         let healthTypes: Set = [heartRate]
         
-        Task {
-            do {
-                try await healthStore.requestAuthorization(toShare: [], read: healthTypes)
-            } catch {
+        healthStore.requestAuthorization(toShare: [], read: healthTypes) { success, error  in
+            if success {
+                self.scheduleNextQuery()
+            } else {
                 print("Error")
             }
         }
     }
     
-    @objc func startHeartRateQuery() {
-            // Invalidate any existing timer
-            timer?.invalidate()
+    func scheduleNextQuery() {
+        
+        self.fetchLatestHeartRateSample()
             
-            // Start the timer to fetch data every 5 seconds
-            timer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) { [weak self] _ in
-                self?.fetchLatestHeartRateSample()
-            }
-            
-            // Fetch initial data
-            fetchLatestHeartRateSample()
+        DispatchQueue.main.asyncAfter(deadline: .now() + updateInterval) {
+            self.scheduleNextQuery()
         }
         
-        private func fetchLatestHeartRateSample() {
-            let heartRate = HKQuantityType(.heartRate)
-            let predicate = HKQuery.predicateForSamples(withStart: Date(), end: Date())
-            let query = HKStatisticsQuery(quantityType: heartRate, quantitySamplePredicate: predicate) { _, result, error in
-                guard let quantity = result?.sumQuantity(), error == nil else {
-                    print("Error fetching heart rate data")
-                    return
-                }
-                let heartRateValue = quantity.doubleValue(for: .count())
-                self.heartRate = heartRateValue
-                print(heartRateValue)
+    }
+        
+    private func fetchLatestHeartRateSample() {
+        guard let heartRateType = HKObjectType.quantityType(forIdentifier: .heartRate) else {
+            return
+        }
+            
+        let predicate = HKQuery.predicateForSamples(withStart: Date().addingTimeInterval(-checkInterval), end: Date())
+            
+        let query = HKStatisticsQuery(quantityType: heartRateType, quantitySamplePredicate: predicate, options: .mostRecent) { _, result, error in
+            
+            if let error = error {
+                print("Error fetching heart rate data: \(error.localizedDescription)")
+                return
+            }
+                
+            guard let quantity = result?.mostRecentQuantity() else {
+                print("No heart rate data available in the given time frame.")
+                return
             }
             
-            healthStore.execute(query)
+            let heartRateValue = quantity.doubleValue(for: HKUnit(from: "count/min"))
+            self.heartRate = Int(heartRateValue)
+            print("Most recent heart rate over the last 600 seconds: \(heartRateValue) bpm")
         }
         
-        deinit {
-            timer?.invalidate()
-        }
+        healthStore.execute(query)
+    }
+    
+    // Need to handle checking the accelerometer data. Also need to handle checking whether those values are low enough to constitute determining the user as asleep.
+    
 }

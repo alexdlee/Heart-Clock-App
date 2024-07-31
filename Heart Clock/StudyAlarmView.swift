@@ -255,7 +255,7 @@ struct StudyAlarmView: View {
                 }
             }
             .onAppear {
-                manager.startHeartRateQuery()
+                manager.scheduleNextQuery()
             }
         }
     }

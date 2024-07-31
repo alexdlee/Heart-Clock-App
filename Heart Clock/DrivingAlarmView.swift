@@ -177,7 +177,7 @@ struct DrivingAlarmView: View {
                
             }
         } .onAppear {
-            manager.startHeartRateQuery()
+            manager.scheduleNextQuery()
         }
     }
     
