@@ -9,7 +9,6 @@ import SwiftUI
 
 struct HomeView: View {
     @StateObject var viewModel = AlarmViewModel()
-    @EnvironmentObject var manager: HealthManager
     
     var body: some View {
         NavigationView {

@@ -254,9 +254,6 @@ struct StudyAlarmView: View {
                     
                 }
             }
-            .onAppear {
-                manager.scheduleNextQuery()
-            }
         }
     }
     
